@@ -1,0 +1,15 @@
+.FeedbackOption_button {
+  min-width: 50px;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 2px;
+  color: #3944e7;
+  border: 2px solid #4955fabb;
+}
+.FeedbackOption_button:hover,
+.FeedbackOption_button:focus {
+  cursor: pointer;
+  border: 2px solid #4955fabb;
+  color: #fff;
+  background-color: #4955fabb;
+}
