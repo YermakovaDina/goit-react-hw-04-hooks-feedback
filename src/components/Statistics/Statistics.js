@@ -1,33 +1,46 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Notification from 'components/Notification';
+import React from "react";
+import PropTypes from "prop-types";
+import Notification from "../Notification/Notification";
 
-const Statistics = ({ title, options, total = 0, positivePercentage = 0 }) =>
-  total === 0 ? (
+const Statistics = ({
+  good = 0,
+  neutral = 0,
+  bad = 0,
+  total = 0,
+  positiveFeedback = 0,
+}) => {
+  return total === 0 ? (
     <Notification message="No feedback given"></Notification>
   ) : (
     <div className="StatisticsWrapper">
-      <h1>{title}</h1>
+      <h1>Statistics:</h1>
       <ul>
-        {options.map((item, i) => (
-          <li key={i}>
-            {item[0]}: {item[1]}
-          </li>
-        ))}
+        <li>
+          Good: <b>{good}</b>
+        </li>
+        <li>
+          Neutral: <b>{neutral}</b>
+        </li>
+        <li>
+          Bad: <b>{bad}</b>
+        </li>
+        <li>
+          Total: <b>{total}</b>
+        </li>
+        <li>
+          Positive feedback: <b>{positiveFeedback}</b>%
+        </li>
       </ul>
-      <p>
-        Total: <b>{total}</b>
-      </p>
-      <p>
-        Positive feedback: <b>{positivePercentage}</b>%
-      </p>
     </div>
   );
+};
 
 Statistics.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.array.isRequired),
-  total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.number.isRequired,
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  positiveFeedback: PropTypes.number,
 };
 
 export default Statistics;

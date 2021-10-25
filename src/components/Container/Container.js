@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 //styles
-import './Container.css';
+import "./Container.css";
 
 const Container = ({ title, children }) => {
   return (
     <div className="ContainerWrapper">
-      {title && <h1>{title} </h1>}
+      {title && <h1>{title}</h1>}
 
       <div>{children}</div>
     </div>
@@ -15,11 +15,11 @@ const Container = ({ title, children }) => {
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
-  title:PropTypes.string,
+  title: PropTypes.string,
 };
 
 Container.defaultProps = {
-  title:''
+  title: "",
 };
 
 export default Container;
